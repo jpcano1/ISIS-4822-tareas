@@ -6,13 +6,13 @@ let plot1 = document.getElementById("plot1"),
     plot6 = document.getElementById("plot6");
 
 let makePlot1 = () => {
-    Plotly.d3.csv("../../datasets/day_data.csv", (data) => {
+    Plotly.d3.csv("https://raw.githubusercontent.com/jpcano1/ISIS-4822-tareas/master/datasets/day_data.csv", (data) => {
         processPlot(data);
     });
 }
 
 let makePlot2 = () => {
-    Plotly.d3.csv("../../datasets/month_data.csv", (data) => {
+    Plotly.d3.csv("https://raw.githubusercontent.com/jpcano1/ISIS-4822-tareas/master/datasets/month_data.csv", (data) => {
         processPlot1(data);
     })
 }
