@@ -1,13 +1,103 @@
-function makeDemo1() {
-    d3.tsv("https://raw.githubusercontent.com/janert/d3-for-the-impatient/master/examples/examples-simple.tsv")
-        .then((data) => {
-            d3.select("svg")
-                .selectAll("circle")
-                .data(data)
-                .enter()
-                .append("circle")
-                .attr("r", 5).attr("fill", "red")
-                .attr("cx", function (d) { return d["x"] })
-                .attr("cy", function (d) { return d["y"] })
-        });
+let plot1 = document.getElementById("plot1"),
+    plot2 = document.getElementById("plot2"),
+    plot3 = document.getElementById("plot3"),
+    plot4 = document.getElementById("plot4"),
+    plot5 = document.getElementById("plot5"),
+    plot6 = document.getElementById("plot6");
+
+let makePlot1 = () => {
+    Plotly.d3.csv("../../datasets/day_data.csv", (data) => {
+        processPlot(data);
+    });
 }
+
+let makePlot2 = () => {
+    Plotly.d3.csv("../../datasets/month_data.csv", (data) => {
+        processPlot1(data);
+    })
+}
+
+function processPlot(data) {
+    let x = [],
+        y1 = [],
+        y2 = [],
+        y3 = [];
+    for (let i = 0; i < data.length; i++) {
+        let row = data[i];
+        x.push(row["DiaSemana"]);
+        y1.push(row["max"]);
+        y2.push(row["mean"]);
+        y3.push(row["count"]);
+    }
+
+    drawPlot(x, y1, plot1, "Valor del Giro Máximo Vs. Dia de la Semana", "Día de la Semana",
+        "Valor del Giro (Billones)");
+    drawPlot(x, y2, plot2, "Valor del Giro Promedio Vs. Dia de la Semana", "Día de la Semana",
+        "Valor del Giro (Millones)");
+    drawPlot(x, y3, plot3, "Número de Giros Vs. Dia de la Semana", "Día de la Semana",
+        "Número de Giros");
+}
+
+function processPlot1(data) {
+    let x = [],
+        y1 = [],
+        y2 = [],
+        y3 = [];
+
+    for (let i = 0; i < data.length; i++) {
+        let row = data[i];
+        x.push(row["Mes"]);
+        y1.push(row["max"]);
+        y2.push(row["mean"]);
+        y3.push(row["count"]);
+    }
+
+    drawPlot(x, y1, plot4, "Valor del Giro Máximo Vs. Mes del Año", "Mes del Año", "Valor del Giro (Billones)");
+    drawPlot(x, y2, plot5, "Valor del Giro Promedio Vs. Mes del Año", "Mes del Año", "Valor del Giro (Millones)");
+    drawPlot(x, y3, plot6, "Número de Giros Vs. Mes del Año", "Mes del Año", "Número de Giros");
+}
+
+function drawPlot(x, y,
+                  ax = plot1,
+                  title = undefined, xlabel = undefined,
+                  ylabel = undefined) {
+    let trace1 = {
+        type: "scatter",
+        x: x,
+        y: y,
+    };
+
+    let data = [trace1];
+
+    let layout = {
+        title: {
+            text: title,
+            font: {
+                family: "Courier New, monospace",
+                size: 18
+            },
+            xref: "paper"
+        },
+        xaxis: {
+            title: {
+                text: xlabel
+            }
+        },
+        yaxis: {
+            title: {
+                text: ylabel
+            }
+        }
+    };
+
+    let config = {
+        responsive: true,
+        displayModeBar: false,
+        scrollZoom: true
+    };
+
+    Plotly.newPlot(ax, data, layout, config);
+}
+
+makePlot1();
+makePlot2();
