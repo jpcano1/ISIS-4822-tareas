@@ -126,7 +126,6 @@ function drawPlot(x, y, ax = plot1,
 
     let config = {
         responsive: true,
-        displayModeBar: true,
         scrollZoom: true
     };
 
