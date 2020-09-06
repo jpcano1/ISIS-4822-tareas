@@ -11,61 +11,161 @@
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid text-center">
-        <h2><strong>Gráficas de días de la semana</strong></h2>
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg">
-                <div id="plot1"></div>
-            </div>
-            <div class="col-12 col-lg">
-                <div id="plot2"></div>
-            </div>
-            <div class="col-12 col-lg">
-                <div id="plot3"></div>
-            </div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <h2><strong>Análisis de Giros del Sistema General de Regalías</strong></h2>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <ol>
+                <li>Desarrollo del Framework de Tamara Muzner:
+                    <ul>
+                        <li>Abstracción de los datos (WHAT):
+                            <table class="table table-hover mt-2">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Columna</th>
+                                    <th scope="col">Tipo</th>
+                                    <th scope="col">Descripción</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Código Departamento</td>
+                                    <td>Cuantitativo</td>
+                                    <td>Código del departamento donde se efectuó el giro</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre Departamento</td>
+                                    <td>Categórico</td>
+                                    <td>El nombre del departamento donde se efectuó el giro</td>
+                                </tr>
+                                <tr>
+                                    <td>Fecha Giro</td>
+                                    <td>Datetime</td>
+                                    <td>Fecha en la cual se efectuó el giro</td>
+                                </tr>
+                                <tr>
+                                    <td>Numero de Giro</td>
+                                    <td>Cuantitativo</td>
+                                    <td>Número asignado al giro efectuado</td>
+                                </tr>
+                                <tr>
+                                    <td>Identificación Entidad</td>
+                                    <td>Categórico</td>
+                                    <td>Código de la entidad que realizó el giro</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre Entidad</td>
+                                    <td>Categórico</td>
+                                    <td>Nombre de la entidad que realizó el giro</td>
+                                </tr>
+                                <tr>
+                                    <td>Rubro</td>
+                                    <td>Categórico</td>
+                                    <td>Cuenta a la que se le realizó el giro</td>
+                                </tr>
+                                <tr>
+                                    <td>Valor Neto del Giro</td>
+                                    <td>Cuantitativo</td>
+                                    <td>Valor neto del giro realizado al sistema general de regalías</td>
+                                </tr>
+                                <tr>
+                                    <td>Valor Pagado por el Giro</td>
+                                    <td>Cuantitativo</td>
+                                    <td>Valor que se pagó por el giro al sistema general de regalías</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <strong>Cada ítem corresponde a un giro realizado</strong>
+                        </li>
+                        <li>Abstracción de tareas (WHY):
+                            <ul>
+                                <li>Tareas Principales
+                                    <ul>
+                                        <li>Comparar el costo de los giros por meses para determinar si el mes influye
+                                            en el
+                                            costo del giro, se tuvieron en cuenta el máximo y el promedio de los giros.
+                                        </li>
+                                        <li>Identificar los días de la semana donde se registraron más giros durante el
+                                            año y
+                                            los giros donde se pagó más teniendo en cuenta el máximo y el promedio.
+                                        </li>
+                                        <li>Identificar los departamentos donde hubo mayor flujo de giros.</li>
+                                    </ul>
+                                </li>
+                                <li>Tareas Secundarias
+                                    <ul>
+                                        <li>Identificar los meses donde hubo mayor flujo de giros.</li>
+                                        <li>Comparar el valor de los giros entre departamentos teniendo en cuenta el
+                                            giro máximo y el promedio de giros
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Desarrollo de tareas (HOW):</li>
+                    </ul>
+                </li>
+            </ol>
         </div>
     </div>
-
-    <div class="container-fluid text-center">
-        <h2><strong>Gráfica de meses del año</strong></h2>
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg">
-                <div id="plot4"></div>
-            </div>
-            <div class="col-12 col-lg">
-                <div id="plot5"></div>
-            </div>
-            <div class="col-12 col-lg">
-                <div id="plot6"></div>
-            </div>
+</div>
+<div class="container-fluid text-center">
+    <h5><strong>Gráficas de días de la semana</strong></h5>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg">
+            <div id="plot1"></div>
+        </div>
+        <div class="col-12 col-lg">
+            <div id="plot2"></div>
+        </div>
+        <div class="col-12 col-lg">
+            <div id="plot3"></div>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid text-center">
-        <h2><strong>Gráfica de Departamentos del país</strong></h2>
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg">
-                <div id="plot7"></div>
-            </div>
-            <div class="col-12 col-lg">
-                <div id="plot8"></div>
-            </div>
-            <div class="col-12 col-lg">
-                <div id="plot9"></div>
-            </div>
+<div class="container-fluid text-center">
+    <h5><strong>Gráfica de meses del año</strong></h5>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg">
+            <div id="plot4"></div>
+        </div>
+        <div class="col-12 col-lg">
+            <div id="plot5"></div>
+        </div>
+        <div class="col-12 col-lg">
+            <div id="plot6"></div>
         </div>
     </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="js/functions.js"></script>
+<div class="container-fluid text-center">
+    <h5><strong>Gráfica de Departamentos del país</strong></h5>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg">
+            <div id="plot7"></div>
+        </div>
+        <div class="col-12 col-lg">
+            <div id="plot8"></div>
+        </div>
+        <div class="col-12 col-lg">
+            <div id="plot9"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="js/functions.js"></script>
 </body>
 </html>

@@ -39,11 +39,11 @@ function processPlot(data) {
         y3.push(row["count"]);
     }
 
-    drawPlot(x, y1, plot1, "Valor del Giro Máximo Vs. Dia de la Semana", "Día de la Semana",
+    drawPlot(x, y1, plot1, "Valor del Giro Máximo Vs. Dia de la Semana (Fig. 1)", "Día de la Semana",
         "Valor del Giro (Billones)");
-    drawPlot(x, y2, plot2, "Valor del Giro Promedio Vs. Dia de la Semana", "Día de la Semana",
+    drawPlot(x, y2, plot2, "Valor del Giro Promedio Vs. Dia de la Semana (Fig. 2)", "Día de la Semana",
         "Valor del Giro (Millones)");
-    drawPlot(x, y3, plot3, "Número de Giros Vs. Dia de la Semana", "Día de la Semana",
+    drawPlot(x, y3, plot3, "Número de Giros Vs. Dia de la Semana (Fig. 3)", "Día de la Semana",
         "Número de Giros");
 }
 
@@ -61,11 +61,11 @@ function processPlot1(data) {
         y3.push(row["count"]);
     }
 
-    drawPlot(x, y1, plot4, "Valor del Giro Máximo Vs. Mes del Año", "Mes del Año",
+    drawPlot(x, y1, plot4, "Valor del Giro Máximo Vs. Mes del Año (Fig. 4)", "Mes del Año",
         "Valor del Giro (Billones)");
-    drawPlot(x, y2, plot5, "Valor del Giro Promedio Vs. Mes del Año", "Mes del Año",
+    drawPlot(x, y2, plot5, "Valor del Giro Promedio Vs. Mes del Año (Fig. 5)", "Mes del Año",
         "Valor del Giro (Millones)");
-    drawPlot(x, y3, plot6, "Número de Giros Vs. Mes del Año", "Mes del Año",
+    drawPlot(x, y3, plot6, "Número de Giros Vs. Mes del Año (Fig. 6)", "Mes del Año",
         "Número de Giros");
 }
 
@@ -83,11 +83,11 @@ function processPlot2(data) {
         y3.push(row["count"]);
     }
 
-    drawPlot(x, y1, plot7, "Valor del Giro Máximo Vs. Departamento", "Departamento",
+    drawPlot(x, y1, plot7, "Valor del Giro Máximo Vs. Departamento (Fig. 7)", "Departamento",
         "Valor del Giro (Billones)");
-    drawPlot(x, y2, plot8, "Valor del Giro Promedio Vs. Departamento", "Departamento",
+    drawPlot(x, y2, plot8, "Valor del Giro Promedio Vs. Departamento (Fig. 8)", "Departamento",
         "Valor del Giro (Millones)");
-    drawPlot(x, y3, plot9, "Número de Giros Vs. Departamento", "Departamento",
+    drawPlot(x, y3, plot9, "Número de Giros Vs. Departamento (Fig. 9)", "Departamento",
         "Número de Giros");
 }
 
@@ -95,9 +95,17 @@ function drawPlot(x, y, ax = plot1,
                   title = undefined, xlabel = undefined,
                   ylabel = undefined) {
     let trace1 = {
-        type: "scatter",
         x: x,
         y: y,
+        mode: "markers+lines",
+        marker: {
+            size: 6,
+            color: "#3f51b5"
+        },
+        line: {
+            color: "#3f51b5",
+            width: 1.3
+        }
     };
 
     let data = [trace1];
@@ -107,9 +115,8 @@ function drawPlot(x, y, ax = plot1,
             text: title,
             font: {
                 family: "Courier New, monospace",
-                size: 18
+                size: 15
             },
-            xref: "paper"
         },
         xaxis: {
             title: {
@@ -122,6 +129,9 @@ function drawPlot(x, y, ax = plot1,
                 text: ylabel,
             }
         },
+        font: {
+            size: 10
+        }
     };
 
     let config = {
