@@ -40,7 +40,7 @@ function processPlot(data) {
     }
 
     drawPlot(x, y1, plot1, "Valor del Giro Máximo Vs. Dia de la Semana (Fig. 1)", "Día de la Semana",
-        "Valor del Giro (Billones)");
+        "Valor del Giro (Miles de Millones)");
     drawPlot(x, y2, plot2, "Valor del Giro Promedio Vs. Dia de la Semana (Fig. 2)", "Día de la Semana",
         "Valor del Giro (Millones)");
     drawPlot(x, y3, plot3, "Número de Giros Vs. Dia de la Semana (Fig. 3)", "Día de la Semana",
@@ -62,7 +62,7 @@ function processPlot1(data) {
     }
 
     drawPlot(x, y1, plot4, "Valor del Giro Máximo Vs. Mes del Año (Fig. 4)", "Mes del Año",
-        "Valor del Giro (Billones)");
+        "Valor del Giro (Miles de Millones)");
     drawPlot(x, y2, plot5, "Valor del Giro Promedio Vs. Mes del Año (Fig. 5)", "Mes del Año",
         "Valor del Giro (Millones)");
     drawPlot(x, y3, plot6, "Número de Giros Vs. Mes del Año (Fig. 6)", "Mes del Año",
@@ -84,7 +84,7 @@ function processPlot2(data) {
     }
 
     drawPlot(x, y1, plot7, "Valor del Giro Máximo Vs. Departamento (Fig. 7)", "Departamento",
-        "Valor del Giro (Billones)");
+        "Valor del Giro (Miles de Millones)");
     drawPlot(x, y2, plot8, "Valor del Giro Promedio Vs. Departamento (Fig. 8)", "Departamento",
         "Valor del Giro (Millones)");
     drawPlot(x, y3, plot9, "Número de Giros Vs. Departamento (Fig. 9)", "Departamento",
@@ -114,7 +114,6 @@ function drawPlot(x, y, ax = plot1,
         title: {
             text: title,
             font: {
-                family: "Courier New, monospace",
                 size: 15
             },
         },
@@ -130,7 +129,7 @@ function drawPlot(x, y, ax = plot1,
             }
         },
         font: {
-            size: 10
+            size: 12
         }
     };
 
