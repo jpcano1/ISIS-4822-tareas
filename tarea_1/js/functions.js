@@ -44,7 +44,7 @@ function processPlot(data) {
     drawPlot(x, y2, plot2, "Valor del Giro Promedio Vs. Dia de la Semana (Fig. 2)", "Día de la Semana",
         "Valor del Giro (Millones)");
     drawPlot(x, y3, plot3, "Número de Giros Vs. Dia de la Semana (Fig. 3)", "Día de la Semana",
-        "Número de Giros");
+        "Número de Giros", "bar");
 }
 
 function processPlot1(data) {
@@ -66,7 +66,7 @@ function processPlot1(data) {
     drawPlot(x, y2, plot5, "Valor del Giro Promedio Vs. Mes del Año (Fig. 5)", "Mes del Año",
         "Valor del Giro (Millones)");
     drawPlot(x, y3, plot6, "Número de Giros Vs. Mes del Año (Fig. 6)", "Mes del Año",
-        "Número de Giros");
+        "Número de Giros", "bar");
 }
 
 function processPlot2(data) {
@@ -88,24 +88,37 @@ function processPlot2(data) {
     drawPlot(x, y2, plot8, "Valor del Giro Promedio Vs. Departamento (Fig. 8)", "Departamento",
         "Valor del Giro (Millones)");
     drawPlot(x, y3, plot9, "Número de Giros Vs. Departamento (Fig. 9)", "Departamento",
-        "Número de Giros");
+        "Número de Giros", "bar");
 }
 
 function drawPlot(x, y, ax = plot1,
                   title = undefined, xlabel = undefined,
-                  ylabel = undefined) {
+                  ylabel = undefined, type = "scatter") {
+    let colors = [
+        "#e53935",
+        "#512da8",
+        "#3f51b5",
+        "#1a237e",
+        "#0097a7",
+        "#00897b",
+        "#4caf50",
+        "#f4511e",
+        "#ff6f00"
+    ],
+        rand = Math.floor(Math.random() * colors.length);
     let trace1 = {
         x: x,
         y: y,
         mode: "markers+lines",
         marker: {
             size: 6,
-            color: "#3f51b5"
+            color: colors[rand]
         },
         line: {
-            color: "#3f51b5",
+            color: colors[rand],
             width: 1.3
-        }
+        },
+        type: type
     };
 
     let data = [trace1];
