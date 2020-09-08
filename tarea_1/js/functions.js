@@ -142,7 +142,8 @@ function drawPlot(x, y, ax = plot1,
             }
         },
         font: {
-            size: 12
+            size: 12,
+            fontFamily: 'Courier New, monospace'
         }
     };
 

@@ -9,6 +9,13 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Hind Madurai', sans-serif;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,9 +25,27 @@
     <div class="row justify-content-center">
         <div class="col">
             <ol>
+                <li>Contexto:
+                    <p>El sistema general de regalías de Colombia es un esquema de coordinación entre entidades
+                        territoriales y el gobierno nacional a través del cual se establece la distribución de
+                        administración, uso eficiente y destinación de ingresos que provienen de la explotación de
+                        recursos naturales no renovables.
+                        <span class="blockquote-footer">
+                            Tomado de
+                            <cite title="fuente">
+                                <a class="alert-link" target="_blank"
+                                   href="http://www.irc.gov.co/webcenter/portal/SGR/pages_principal">
+                                    aquí
+                                </a>
+                            </cite>
+                        </span>
+                        En las siguientes gráficas se buscará hacer un análisis visual acerca de la distribución de
+                        ingresos que se da a través de giros departamentales.
+                    </p>
+                </li>
                 <li>Desarrollo del Framework de Tamara Muzner:
                     <ul>
-                        <li>Abstracción de los datos (WHAT):
+                        <li>Abstracción de los datos <strong>(WHAT)</strong>:
                             <table class="table table-hover mt-2">
                                 <thead class="thead-dark">
                                 <tr>
@@ -79,7 +104,7 @@
                             </table>
                             <strong>Cada ítem corresponde a un giro realizado</strong>
                         </li>
-                        <li>Abstracción de tareas (WHY):
+                        <li>Abstracción de tareas <strong>(WHY)</strong>:
                             <ul>
                                 <li>Tareas Principales
                                     <ol>
@@ -104,126 +129,147 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>Desarrollo de tareas (HOW):</li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
-    </div>
-</div>
-<div class="container-fluid text-center">
-    <h5><strong>Gráficas de días de la semana</strong></h5>
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg">
-            <div id="plot1"></div>
-        </div>
-        <div class="col-12 col-lg">
-            <div id="plot2"></div>
-        </div>
-        <div class="col-12 col-lg">
-            <div id="plot3"></div>
-        </div>
-    </div>
-</div>
+                        <li>Desarrollo de tareas <strong>(HOW)</strong>:
+                            <h5 class="text-center"><strong>Gráficas de días de la semana</strong></h5>
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg">
+                                    <div id="plot1"></div>
+                                </div>
+                                <div class="col-12 col-lg">
+                                    <div id="plot2"></div>
+                                </div>
+                                <div class="col-12 col-lg">
+                                    <div id="plot3"></div>
+                                </div>
+                            </div>
 
-<div class="container-fluid text-center">
-    <h5><strong>Gráfica de meses del año</strong></h5>
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg">
-            <div id="plot4"></div>
-        </div>
-        <div class="col-12 col-lg">
-            <div id="plot5"></div>
-        </div>
-        <div class="col-12 col-lg">
-            <div id="plot6"></div>
-        </div>
-    </div>
-</div>
+                            <h5 class="text-center"><strong>Gráfica de meses del año</strong></h5>
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg">
+                                    <div id="plot4"></div>
+                                </div>
+                                <div class="col-12 col-lg">
+                                    <div id="plot5"></div>
+                                </div>
+                                <div class="col-12 col-lg">
+                                    <div id="plot6"></div>
+                                </div>
+                            </div>
 
-<div class="container-fluid text-center">
-    <h5><strong>Gráfica de Departamentos del país</strong></h5>
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg">
-            <div id="plot7"></div>
-        </div>
-        <div class="col-12 col-lg">
-            <div id="plot8"></div>
-        </div>
-        <div class="col-12 col-lg">
-            <div id="plot9"></div>
-        </div>
-    </div>
-</div>
+                            <h5 class="text-center"><strong>Gráfica de Departamentos del país</strong></h5>
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg">
+                                    <div id="plot7"></div>
+                                </div>
+                                <div class="col-12 col-lg">
+                                    <div id="plot8"></div>
+                                </div>
+                                <div class="col-12 col-lg">
+                                    <div id="plot9"></div>
+                                </div>
+                            </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <ul>
-                <li>Desarrollo de tareas principales:
-                    <ol>
-                        <li>Se puede observar con las gráficas <a href="#plot4" class="alert-link">4</a> y <a
-                                href="#plot5" class="alert-link">5</a> que en abril existen los números más grandes en
-                            los giros
-                            tanto máximos como promedios. Pero hay registros que muestran que junio recibe en promedio
-                            $47.3 millones de pesos en giros y que el máximo valor fue $7.2 mil millones de pesos, por
-                            lo que no se demuestra en su totalidad que junio sea el mes con valores más pequeños en los
-                            giros.
-                            <ul>
-                                <li><strong>Marks: </strong>
+                            <div class="row">
+                                <div class="col">
                                     <ul>
-                                        <li>Los puntos que codifican el valor del giro con respecto al mes.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Channels: </strong>
-                                    <ul>
-                                        <li>El eje horizontal que codifica los meses.</li>
-                                        <li>El eje vertical que codifica los valores máximos y promedios.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Según las imágenes <a href="#plot1" class="alert-link">1</a> y <a href="#plot2"
-                                                                                              class="alert-link">2</a>
-                            Los días de la semana donde se registraron los números más grandes en las consignaciones
-                            fueron miércoles y jueves, acorde tanto en la gráfica de valores máximos y promedios.
-                            <ul>
-                                <li><strong>Marks: </strong>
-                                    <ul>
-                                        <li>Los puntos codifican los valores de los giros con respecto a los días de la
-                                            semana
+                                        <li>Desarrollo de tareas principales:
+                                            <ol>
+                                                <li>Se puede observar con las gráficas <a href="#plot4"
+                                                                                          class="alert-link">4</a> y <a
+                                                        href="#plot5" class="alert-link">5</a> que en abril existen los
+                                                    números más grandes en
+                                                    los giros
+                                                    tanto máximos como promedios. Pero hay registros que muestran que
+                                                    junio recibe en promedio
+                                                    $47.3 millones de pesos en giros y que el máximo valor fue $7.2 mil
+                                                    millones de pesos, por
+                                                    lo que no se demuestra en su totalidad que junio sea el mes con
+                                                    valores más pequeños en los
+                                                    giros.
+                                                    <ul>
+                                                        <li><strong>Marks: </strong>
+                                                            <ul>
+                                                                <li>Los puntos que codifican el valor del giro con
+                                                                    respecto al mes.
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><strong>Channels: </strong>
+                                                            <ul>
+                                                                <li>El eje horizontal que codifica los meses.</li>
+                                                                <li>El eje vertical que codifica los valores máximos y
+                                                                    promedios.
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>Según las imágenes <a href="#plot1" class="alert-link">1</a> y <a
+                                                        href="#plot2"
+                                                        class="alert-link">2</a>
+                                                    Los días de la semana donde se registraron los números más grandes
+                                                    en las consignaciones
+                                                    fueron miércoles y jueves, acorde tanto en la gráfica de valores
+                                                    máximos y promedios.
+                                                    <ul>
+                                                        <li><strong>Marks: </strong>
+                                                            <ul>
+                                                                <li>Los puntos codifican los valores de los giros con
+                                                                    respecto a los días de la
+                                                                    semana
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><strong>Channels: </strong>
+                                                            <ul>
+                                                                <li>El eje horizontal codifica los días de la semana.
+                                                                </li>
+                                                                <li>El eje vertical codifica los valores de los giros.
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>Gracias a la información de la
+                                                    <a href="#plot9" class="alert-link">figura
+                                                        9</a> sabemos que
+                                                    los departamentos donde más se generaron
+                                                    más giros fueron el Valle del Cauca, Cauca y Boyacá.
+                                                    <ul>
+                                                        <li><strong>Marks: </strong>
+                                                            <ul>
+                                                                <li>Las áreas codifican la cantidad de giros por
+                                                                    departamento del país
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><strong>Channels: </strong>
+                                                            <ul>
+                                                                <li>El eje horizontal codifica los departamentos del
+                                                                    país
+                                                                </li>
+                                                                <li>El eje vertical codifica el número de giros
+                                                                    realizados.
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>Desarrollo de tareas secundarias:
+                                            <ol>
+                                                <li></li>
+                                            </ol>
                                         </li>
                                     </ul>
-                                </li>
-                                <li><strong>Channels: </strong>
-                                    <ul>
-                                        <li>El eje horizontal codifica los días de la semana.</li>
-                                        <li>El eje vertical codifica los valores de los giros.</li>
-                                    </ul>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </li>
-                        <li>Gracias a la información de la <a href="#plot9" class="alert-link">figura 9</a> sabemos que
-                            los departamentos donde más se generaron
-                            más giros fueron el Valle del Cauca, Cauca y Boyacá.
-                            <ul>
-                                <li><strong>Marks: </strong>
-                                    <ul>
-                                        <li>Las áreas codifican la cantidad de giros por departamento del país</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Channels: </strong>
-                                    <ul>
-                                        <li>El eje horizontal codifica los departamentos del país</li>
-                                        <li>El eje vertical codifica el número de giros realizados.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ol>
+                    </ul>
                 </li>
-                <li>Desarrollo de tareas secundarias.</li>
-            </ul>
+                <li>Conclusiones (Insights)</li>
+            </ol>
         </div>
     </div>
 </div>
