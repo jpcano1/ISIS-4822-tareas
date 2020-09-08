@@ -44,7 +44,7 @@ function processPlot(data) {
     drawPlot(x, y2, plot2, "Valor del Giro Promedio Vs. Dia de la Semana (Fig. 2)", "Día de la Semana",
         "Valor del Giro (Millones)");
     drawPlot(x, y3, plot3, "Número de Giros Vs. Dia de la Semana (Fig. 3)", "Día de la Semana",
-        "Número de Giros", "bar");
+        "Número de Giros (Miles)", "bar");
 }
 
 function processPlot1(data) {
